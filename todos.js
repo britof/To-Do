@@ -18,11 +18,12 @@ function render()
         var pos = ToDos.indexOf(todo);
         linkElement.setAttribute('onclick', 'del(' + pos + ')');
 
-        var linkText = document.createTextNode(' #Delete');
+        var linkText = document.createTextNode('[x]\t');
         linkElement.appendChild(linkText);
         
-        todoElement.appendChild(todoText);
         todoElement.append(linkElement);
+        todoElement.appendChild(todoText);
+        
         listElement.appendChild(todoElement);
 
         saveToStorage();
